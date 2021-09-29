@@ -12,31 +12,13 @@ public class Program {
         int row = sc.nextInt();
         System.out.print("Enter the column: ");
         int column = sc.nextInt();
-        
+
         Position position = new Position(row, column);
 
         System.out.println(position);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         sc.close();
-        
-        
+
     }
-    
+
 }

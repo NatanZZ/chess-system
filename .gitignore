@@ -7,3 +7,17 @@
 
 # Local History for Visual Studio Code
 .history/
+
+/**/bin/**/*
+
+/./**/bin/**/*
+
+./**/bin/**/*
+
+**/bin/**/*
+
+*/bin/**/*
+
+bin/**/*
+
+/**/bin/* #and the others with just * at the end too

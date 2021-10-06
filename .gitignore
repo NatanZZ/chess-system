@@ -21,3 +21,5 @@
 bin/**/*
 
 /**/bin/* #and the others with just * at the end too
+
+*.md

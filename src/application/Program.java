@@ -17,29 +17,32 @@ public class Program {
         ChessMatch chessMatch = new ChessMatch();
 
         while (true) {
-        try{
-            UI.clearScreen();
-            UI.printBoard(chessMatch.getPieces());
-            System.out.println();
-            System.out.print("Source: ");
-            ChessPosition source = UI.readChessPosition(sc);
+            try {
+                UI.clearScreen();
+                UI.printBoard(chessMatch.getPieces());
+                System.out.println();
+                System.out.print("Source: ");
+                ChessPosition source = UI.readChessPosition(sc);
 
-            System.out.println();
-            System.out.print("Target: ");
-            ChessPosition target = UI.readChessPosition(sc);
+                boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+                UI.clearScreen();
+                UI.printBoard(chessMatch.getPieces(), possibleMoves);
 
-            ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-        }
-        catch(ChessException c){
-            System.out.println(c.getMessage());
-            sc.nextLine();
-        }
-        catch(InputMismatchException i){
-            System.out.println(i.getMessage());
-            sc.nextLine();
-        }
+                System.out.println();
+                System.out.print("Target: ");
+                ChessPosition target = UI.readChessPosition(sc);
 
-        
+                ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+            } 
+            catch (ChessException c) {
+                System.out.println(c.getMessage());
+                sc.nextLine();
+            } 
+            catch (InputMismatchException i) {
+                System.out.println(i.getMessage());
+                sc.nextLine();
+            }
+
         }
 
     }
